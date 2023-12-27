@@ -93,7 +93,7 @@ def lambda_handler_by_id(event, context):
         response_body = {
             'headers': {
              'Access-Control-Allow-Headers': 'Content-Type',
-             'Access-Control-Allow-Origin': ‘*’,
+             'Access-Control-Allow-Origin': '*',
              'Access-Control-Allow-Methods': 'OPTIONS,GET'
             },
             'statusCode': 200,
