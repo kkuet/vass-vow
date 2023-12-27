@@ -1,0 +1,1 @@
+import{j as s}from"./mui-libs-tE8MvhFN.js";import"./react-libs-idFwDLyp.js";import{F as r,a}from"./index-8I-A2yiH.js";import{P as i}from"./PageContainer-VHHNekuZ.js";const o=()=>s.jsxs(i,{children:[s.jsx(r,{}),s.jsx(a,{})]});export{o as default};

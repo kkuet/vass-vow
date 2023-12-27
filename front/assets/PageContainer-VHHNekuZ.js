@@ -1,0 +1,1 @@
+import{j as i,a as s}from"./mui-libs-tE8MvhFN.js";const d=d=>i.jsx(s,{maxWidth:"lg",sx:{paddingLeft:{xs:0,sm:3},paddingRight:{xs:0,sm:3},paddingBottom:10,paddingTop:"100px",minHeight:"calc( 100vh - 100px )"},children:d.children});export{d as P};

@@ -1,0 +1,1 @@
+import{j as s,a as i}from"./mui-libs-tE8MvhFN.js";const a=a=>s.jsx(i,{maxWidth:!1,disableGutters:!0,sx:{display:"flex",flex:"1 1 auto",minHeight:"100vh"},children:a.children}),e="/assets/login-bg-73pI8hW5.jpg";export{a as A,e as l};
