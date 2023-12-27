@@ -30,14 +30,15 @@ Para la generación automática de la infraestructura, sigue estos pasos:
 3. Ejecutar Terraform:
 Asegúrate de tener configuradas tus credenciales de AWS. Luego, ejecuta Terraform para desplegar la infraestructura en Amazon AWS, incluyendo el servidor, la base de datos y el frontal del API Gateway.
 
-bash
+```bash
 
     terraform apply
+````
 
-    Nota: Ajusta las variables en el archivo correspondiente según sea necesario.
+Nota: Ajusta las variables en el archivo correspondiente según sea necesario.
 
-    Ejecutar el Script tables.sql:
-    Una vez generada la base de datos, ejecuta el script tables.sql para la creación de la estructura de modelos en SQL.
+Ejecutar el Script tables.sql:
+Una vez generada la base de datos, ejecuta el script tables.sql para la creación de la estructura de modelos en SQL.
 
 AWS CloudFront - CDN
 
