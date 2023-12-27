@@ -12,6 +12,27 @@ Asegúrate de tener instaladas las siguientes herramientas antes de comenzar:
 - Python (para ejecutar scripts y empaquetar el código Lambda)
 - PostgreSQL Client (para ejecutar scripts SQL)
 
+## Configuración entorno de funciones Lambda 
+
+Las funciones lambda en el fichero lambda_files dependen de un cliente de Postgres que se llama psycopg2. Para empaquetarla dentro del entorno de ejecución de AWS Lambda debemos empaquetar las dependencias de los paquetes de Pipy para que estén disponibles a la hora de ejecutar el código. Para poder hacer esto hemos creado un entorno virtual en Python (myenv) donde instalamos localmente los paquetes requeridos que posteriormente se empaqueta en un zip. Adicionalmente el paquete psycopg2 depende de librerías nativas de Linux (extensión .so) que han de incluirse en el fichero Zip correspondiente. Deben ser compiladas nativamente en Linux para lo cual hemos arrancado una instancia en EC2 con Ubuntu 22.02 donde se han instalado los paquetes de gcc necesarios para la compilación de psycopg2 y se han generado las librerías de enlace dinámico necesarias para el posterior empaquetado.
+
+```bash
+-rw-rw-rw-   1 user     group     3133185 Dec 27 09:17 libcrypto.so.1.1
+-rw-rw-rw-   1 user     group      646065 Dec 27 09:17 libssl.so.1.1
+-rw-rw-rw-   1 user     group      345209 Dec 27 09:17 libgssapi_krb5.so.2.2
+-rw-rw-rw-   1 user     group      219953 Dec 27 09:17 libk5crypto.so.3.1
+-rw-rw-rw-   1 user     group       17913 Dec 27 09:17 libkeyutils.so.1.5
+-rw-rw-rw-   1 user     group     1018953 Dec 27 09:17 libkrb5.so.3.3
+-rw-rw-rw-   1 user     group       76873 Dec 27 09:17 libkrb5support.so.0.1
+-rw-rw-rw-   1 user     group       60977 Dec 27 09:17 liblber.so.2.0.200
+-rw-rw-rw-   1 user     group      447329 Dec 27 09:17 libldap.so.2.0.200
+-rw-rw-rw-   1 user     group      406817 Dec 27 09:17 libpcre.so.1.2.0
+-rw-rw-rw-   1 user     group      178337 Dec 27 09:17 libselinux.so.1
+-rw-rw-rw-   1 user     group      370777 Dec 27 09:17 libpq.so.5
+-rw-rw-rw-   1 user     group      119217 Dec 27 09:17 libsasl2.so.3.0.0
+-rw-rw-rw-   1 user     group       17497 Dec 27 09:17 libcom_err.so.2.1
+```
+
 ## Configuración Inicial
 
 Para la generación automática de la infraestructura, sigue estos pasos:
