@@ -91,6 +91,11 @@ def lambda_handler_by_id(event, context):
     try:
         files = get_all_files_by_id(conn,fileid)
         response_body = {
+            'headers': {
+             'Access-Control-Allow-Headers': 'Content-Type',
+             'Access-Control-Allow-Origin': ‘*’,
+             'Access-Control-Allow-Methods': 'OPTIONS,GET'
+            },
             'statusCode': 200,
             'body': json.dumps([file.__dict__ for file in files], default=str)
         }
