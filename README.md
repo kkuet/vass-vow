@@ -19,12 +19,13 @@ Para la generación automática de la infraestructura, sigue estos pasos:
 1. **Clonar el Repositorio:**
    ```bash
    git clone [URL_DEL_REPOSITORIO]
-  bash
+   ```
+  
 2. Empaquetar y Subir Código Lambda:
     Ejecuta el script createlambda.bat para empaquetar el código Lambda con las dependencias necesarias (psycopg2 y SQLAlchemy) y subir un archivo zip temporal a S3.
    ```bash
       createlambda.bat
-  bash
+   ```
 
 3. Ejecutar Terraform:
 Asegúrate de tener configuradas tus credenciales de AWS. Luego, ejecuta Terraform para desplegar la infraestructura en Amazon AWS, incluyendo el servidor, la base de datos y el frontal del API Gateway.
